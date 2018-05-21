@@ -1,0 +1,62 @@
+﻿
+
+@model IEnumerable<finalProject_Kramar.Models.TestViewModel>
+
+
+@*@model finalProject_Kramar.Models.TestViewModel*@
+
+@{
+    ViewBag.Title = "passTheTest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Проходження тесту</h2>
+
+@using (Html.BeginForm("PassTheTest", "Test", FormMethod.Post))
+{
+    <table class="table">
+
+        @foreach (var test in Model)
+        {
+            <tr>
+                @Html.ActionLink("Edit", "EditAsync", new { id = test.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = test.Id }) |
+                @Html.ActionLink("Add Question", "AddQustion", new { id = test.Id })
+            </tr>
+
+            <tr>
+                <td>    <h1>@Html.DisplayFor(modelItem => test.Description)</h1> </td>
+            </tr>
+
+            foreach (var quest in test.Questions)
+            {
+                <tr>
+                    <td>  <h4>@Html.DisplayFor(modelItem => quest.QuestionText)</h4> </td>
+                </tr>
+
+                foreach (var answers in quest.OptionalAnswers)
+                {
+
+                    <tr>
+                        <td>
+                            <input id="checkedAnswers" name="checkedAnswers" type="checkbox" value=@answers.Id />
+                            <input name="Enable" type="hidden" value="false" />
+                            @Html.DisplayFor(modelItem => answers.OptionAnswer)
+                        </td>
+                    </tr>
+
+
+
+                    @*<tr>
+
+                          @Html.CheckBox("answers", @answers.Id)  @Html.DisplayFor(modelItem => answers.OptionAnswer)
+                        </tr>*@
+                }
+            }
+            <tr>
+                <input name="TestId" type="hidden" value=@test.Id />
+                <td>  <input type="submit" value="Send" /> </td>
+            </tr>
+        }
+    </table>
+}

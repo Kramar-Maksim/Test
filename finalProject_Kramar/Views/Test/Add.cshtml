@@ -1,0 +1,96 @@
+﻿
+
+@model finalProject_Kramar.Models.TestViewModel
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Test</h2>
+
+
+
+@using (Html.BeginForm("Add", "Test", FormMethod.Post))
+{
+    <input type="hidden" value="@ViewBag.Id" name="testId" />
+    <table>
+        <tr>
+            <td><p>Введіть назву тесту :</p></td>
+            <td><input type="text" name="TestName" /> </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><p>Введіть запитання :</p></td>
+            <td><input type="text" name="question" /> </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <p> Введіть варіанти відповідей : </p>
+            </td>
+        </tr>
+
+        @for (int i = 1; i <= 4; i++)
+        {
+            <tr>
+                <td>
+                    <input id="checkBoxNum" name="checkBoxNum" type="checkbox" value= @i />
+                    <input name="Enable" type="hidden" value=i />
+                    @Html.TextBox("Answers")
+                </td>
+            </tr> 
+        }
+
+
+    </table>
+    <tr>
+        <td><input type="submit" /> </td>
+    </tr>
+}
+
+
+
+@*<tr>
+        <td>
+            <input id="checkBoxNum" name="checkBoxNum" type="checkbox" value=2 />
+            <input name="Enable" type="hidden" value="false" />
+            @Html.TextBox("Answers")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input id="checkBoxNum" name="checkBoxNum" type="checkbox" value=3 />
+            <input name="Enable" type="hidden" value="false" />
+            @Html.TextBox("Answers")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input id="checkBoxNum" name="checkBoxNum" type="checkbox" value=4 />
+            <input name="Enable" type="hidden" value="false" />
+            @Html.TextBox("Answers")
+        </td>
+    </tr>*@
+
+@*<tr>
+        <td> @Html.RadioButton("radioBtnNumber", "1") @Html.TextBox("Answers")</td>
+    </tr>
+    <tr>
+        <td> @Html.RadioButton("radioBtnNumber", "2") @Html.TextBox("Answers")</td>
+    </tr>
+    <tr>
+        <td> @Html.RadioButton("radioBtnNumber", "3") @Html.TextBox("Answers")</td>
+    </tr>
+    <tr>
+        <td> @Html.RadioButton("radioBtnNumber", "4") @Html.TextBox("Answers")</td>
+    </tr>*@
+@*</table>
+        <tr>
+            <input type="submit" />
+        </tr>
+    }*@

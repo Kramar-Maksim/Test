@@ -1,0 +1,35 @@
+﻿
+@model IEnumerable<finalProject_Kramar.Models.TestViewModel>
+
+
+@{
+    ViewBag.Title = "Tests";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Список доступних тестів</h2>
+
+@using (Html.BeginForm("Tests", "Test", FormMethod.Post))
+{
+    <td>
+        <h3>
+              Пошук : @Html.TextBox("findTests")
+        </h3>
+    </td>
+
+
+    <table class="table">
+
+        @foreach (var test in Model)
+        {
+            <tr>
+                <td>
+                    <h2> @Html.ActionLink(test.Description, "PassTheTest", new { id = test.Id })</h2>
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+
+

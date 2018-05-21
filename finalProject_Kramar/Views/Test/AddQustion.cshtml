@@ -1,0 +1,59 @@
+﻿
+
+@model finalProject_Kramar.Models.TestViewModel
+
+@{
+    ViewBag.Title = "AddQustion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2> @Model.Description</h2>
+
+
+
+@using (Html.BeginForm("AddQustion", "Test", FormMethod.Post))
+{
+
+    <input type="hidden" value="@Model.Id" name="testId" />
+
+
+
+    <table>
+        <tr>
+            <td><h3><p>Введіть питання :</p></h3></td>
+            <td> <input type="text" name="question" /> </td>
+        </tr>
+    </table>
+
+
+    <table>
+        <h4>Введіть варіанти відповідей :</h4>
+
+        @for (int i = 1; i <= 4; i++)
+    {
+        <tr>
+            <td>
+                <input id="checkBoxNum" name="checkBoxNum" type="checkbox" value=@i />
+                <input name="Enable" type="hidden" value=i />
+                @Html.TextBox("Answers")
+            </td>
+        </tr>
+}
+        @*<tr>
+            <td> @Html.RadioButton("radioBtnNumber", "1") @Html.TextBox("Answers")</td>
+        </tr>
+        <tr>
+            <td> @Html.RadioButton("radioBtnNumber", "2") @Html.TextBox("Answers")</td>
+        </tr>
+        <tr>
+            <td> @Html.RadioButton("radioBtnNumber", "3") @Html.TextBox("Answers")</td>
+        </tr>
+        <tr>
+            <td> @Html.RadioButton("radioBtnNumber", "4") @Html.TextBox("Answers")</td>
+        </tr>*@
+    </table>
+    <tr>
+        <input type="submit" />
+    </tr>
+}

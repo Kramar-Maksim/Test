@@ -1,0 +1,36 @@
+﻿@model IEnumerable<finalProject_Kramar.Models.TestViewModel>
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>My Editor</h2>
+ 
+ 
+@*<table class="table">
+      
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td> @Html.DisplayFor(modelItem => item.Description)  </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+        foreach (var quest in item.Questions)
+        {
+            <tr>
+                <td>  @Html.DisplayFor(modelItem => quest.QuestionText) </td>
+            </tr>
+            foreach (var answers in quest.OptionalAnswers)
+            {
+                <tr>
+                    <td> @Html.RadioButton("radioBtnNumber" + quest.Id, answers.Id) @Html.DisplayFor(modelItem => answers.OptionAnswer) </td>
+                </tr>
+            }
+        }
+    }
+</table>*@

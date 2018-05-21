@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "finalProject_Kramar", "finalProject_Kramar\finalProject_Kramar.csproj", "{34A24436-54D3-4539-A1BF-702FAC84B3C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{485225EC-D9A0-41F5-8FD7-F86F875CF84C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{42049672-4B60-4988-ABCC-3586561DCB5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34A24436-54D3-4539-A1BF-702FAC84B3C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34A24436-54D3-4539-A1BF-702FAC84B3C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34A24436-54D3-4539-A1BF-702FAC84B3C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34A24436-54D3-4539-A1BF-702FAC84B3C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{485225EC-D9A0-41F5-8FD7-F86F875CF84C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{485225EC-D9A0-41F5-8FD7-F86F875CF84C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{485225EC-D9A0-41F5-8FD7-F86F875CF84C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{485225EC-D9A0-41F5-8FD7-F86F875CF84C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42049672-4B60-4988-ABCC-3586561DCB5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42049672-4B60-4988-ABCC-3586561DCB5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42049672-4B60-4988-ABCC-3586561DCB5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42049672-4B60-4988-ABCC-3586561DCB5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61E267C6-E701-406C-B41D-E841CE5AA2ED}
+	EndGlobalSection
+EndGlobal

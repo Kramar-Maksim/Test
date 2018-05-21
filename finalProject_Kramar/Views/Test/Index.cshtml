@@ -1,0 +1,43 @@
+﻿@model IEnumerable<finalProject_Kramar.Models.TestViewModel>
+
+
+@*@model finalProject_Kramar.Models.TestViewModel*@
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tests</h2>
+
+<p>  @Html.ActionLink("Create New", "Add") </p>
+
+<table class="table">
+
+    @foreach (var test in Model)
+    {
+        <tr>
+            <td> <h1>@Html.DisplayFor(modelItem => test.Description)</h1> </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = test.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = test.Id }) |
+                @Html.ActionLink("Add Question", "AddQustion", new { id = test.Id })
+            </td>
+        </tr>
+        foreach (var quest in test.Questions)
+        {
+            <tr>
+                <td>  <h4>@Html.DisplayFor(modelItem => quest.QuestionText)</h4> </td>
+            </tr>
+            foreach (var answers in quest.OptionalAnswers)
+            {
+                <tr>
+                    <td> @Html.RadioButton("radioBtnNumber" + quest.Id, answers.Id) @Html.DisplayFor(modelItem => answers.OptionAnswer) </td>
+                </tr>
+            }
+        }
+        <td>
+            <input type="submit" />
+        </td>
+    }
+</table>

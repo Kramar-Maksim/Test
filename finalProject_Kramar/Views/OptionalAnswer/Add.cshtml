@@ -1,0 +1,36 @@
+﻿@model finalProject_Kramar.Models.OptionalAnswerViewModel
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add  var Answer</h2>
+
+@using (Html.BeginForm("Add", "OptionalAnswer", FormMethod.Post))
+{
+    <input type="hidden" value="@ViewBag.Id" name="testId" />
+    <table>
+        <tr>
+
+            @*валідація для того щоб не ввести в поле int значення string*@
+
+            <td><p>Введіть id_Test :</p></td>
+            <td><input type="text" name="id_Test" /> </td>
+        </tr>
+
+        <tr>
+            <td><p>Введіть id_Question :</p></td>
+            <td><input type="text" name="id_Question" /> </td>
+        </tr>
+
+        <tr>
+            <td><p>Введіть optionAnswer :</p></td>
+            <td><input type="text" name="optionAnswer" /> </td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" value="Отправить" /> </td>
+            <td></td>
+        </tr>
+    </table>
+} 

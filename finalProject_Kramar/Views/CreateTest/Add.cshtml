@@ -1,0 +1,51 @@
+﻿
+
+@model finalProject_Kramar.Models.TestViewModel
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Test</h2>
+
+
+
+@using (Html.BeginForm("Add", "Test", FormMethod.Post))
+{
+    <input type="hidden" value="@ViewBag.Id" name="testId" />
+    <table>
+        <tr>
+            <td><p>Введіть назву тесту :</p></td>
+            @*@Html.TextBox("Deskription", "")*@
+            <td><input type="text" name="description" /> </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Отправить" /> </td>
+            <td></td>
+        </tr>
+    </table>
+}
+
+@using (Html.BeginForm("Add", "Test", FormMethod.Post))
+{
+    <table>
+
+        @Html.RadioButton("answer", "1")
+        <span>@Html.DisplayFor(modelItem => Model.Description)</span>
+        <br />
+
+        @Html.RadioButton("answer", "2")
+        <span>синий</span>
+        <br />
+
+        @Html.RadioButton("answer", "3", true)
+        <span>@Html.DisplayFor(modelItem => Model.Description)</span>
+        <br />
+
+        @Html.RadioButton("answer", "4")
+        <span>зеленый</span>
+        <br />
+
+    </table>
+}
